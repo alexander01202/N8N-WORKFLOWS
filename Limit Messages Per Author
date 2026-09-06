@@ -1,0 +1,9 @@
+## Purpose / Description
+
+I use this workflow to take a collection of messages and return only up to three messages per author. The goal is to keep each author’s contribution represented while preventing any one person from dominating the final output. This is useful when preparing chat excerpts, community summaries, moderation reviews, testimonials, support conversations, or any situation where I need a balanced sample of messages by person.
+
+The workflow is triggered by another n8n workflow and receives message details such as the author, author ID, message content, message ID, timestamp, and method. It then groups the incoming messages by author and author ID, loops through each author group, separates their messages, applies a limit of three messages, and finally returns the selected messages together with the correct author information.
+
+The key n8n building blocks used here are the **Execute Workflow Trigger** to receive data from another workflow, **Summarize** to group messages by author, **Loop Over Items** to process each author separately, **Split Out** to expand grouped messages, **Limit** to keep only three messages per author, and a final formatting step to return a clean result.
+
+This workflow can be adapted easily to other similar use cases. For example, I could limit the number of support tickets per customer, comments per user, posts per channel, reviews per product, or events per account. I would only need to change the grouping field and the maximum number of items allowed per group, depending on the outcome I want.
