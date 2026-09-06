@@ -1,0 +1,9 @@
+## Purpose / Description
+
+I use this workflow to automatically import an incoming order file, clean and validate its contents, and sync the relevant information into Airtable without creating unnecessary duplicates. The workflow starts when a file is submitted through a webhook, extracts the spreadsheet/CSV data, checks whether the batch has already been processed, and only continues with records that are new.
+
+From there, I compare the incoming file against existing Airtable data such as products, customer accounts, and sales territories. If a product or account from the file does not already exist, I create it automatically with the required default information. I also enrich customer records by matching them to the right territory before they are added. Once the supporting records are in place, I insert or update the related order documents, including bill of lading and purchase order information, so the operational records stay aligned.
+
+The key parts of the workflow are the **Webhook** for receiving files, **Extract from File** for reading the uploaded data, **Merge** nodes for duplicate checking and comparison, **Aggregate/formatting steps** for preparing the imported rows, and **Airtable search/create/upsert actions** for keeping the database current. Together, these steps turn a manual file-import process into a controlled automated sync.
+
+This workflow can be adapted to many similar situations where a business receives recurring files and needs to update a central database. For example, it could be reused for distributor order uploads, inventory feeds, customer onboarding lists, vendor catalog imports, or invoice reconciliation. In another context, I would keep the same structure: receive a file, extract the rows, compare them against existing records, create any missing reference data, then insert or update the final business records.
