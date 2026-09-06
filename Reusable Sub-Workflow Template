@@ -1,0 +1,7 @@
+## Purpose / Description
+
+I use this workflow as a reusable sub-workflow template that can be started by another n8n workflow whenever a shared process needs to run. Its main purpose is to provide a clean starting point for building logic that can be called from a larger automation, rather than duplicating the same steps across multiple workflows.
+
+The workflow uses n8n’s **Execute Workflow Trigger** as the key starting point, which allows another workflow to launch this one and pass information into it. After that, it currently contains a simple placeholder step where the actual business logic can be added. This makes it ideal as a foundation for tasks such as formatting data, enriching records, checking conditions, sending notifications, or performing any repeatable action that several workflows may need.
+
+I can adapt this workflow by replacing the placeholder step with the specific actions required for a given use case. For example, in one context it could prepare customer information before a sales process continues, while in another it could validate incoming request details before passing results back to the main automation. The value of this setup is that I can keep common logic centralized, easier to maintain, and reusable across multiple n8n workflows.
