@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to turn existing cold email icebreakers for nonprofit leads into shorter, cleaner, ready-to-send outreach emails and save the final version back into Google Sheets.
+
+The workflow starts when I manually run it, then it pulls lead records from a Google Sheet. It filters for the rows that are marked for processing, handles each lead one at a time, and sends the existing email icebreaker into an AI writing step. That first AI step restructures the content into a concise outreach email, keeps the message within the target word count, and follows a specific nonprofit-focused sales template.
+
+After the first draft is created, I run it through a second AI quality-control step. This second pass checks that the email follows the required formatting rules, including consistent casing, lowercase company names where appropriate, clean punctuation, no dash usage, and only keeping the compliment when it references a meaningful career milestone or recent role achievement. The workflow then writes the finished shortened email back into the same Google Sheet and updates the processing flag so I can track which leads have been handled.
+
+The critical tools used in this workflow are n8n for orchestration, Google Sheets for lead storage and output, Anthropic Claude for email rewriting and review, structured AI output parsing to keep the response in a predictable format, an auto-fixing parser to repair malformed AI responses, and a loop/wait pattern to process rows reliably without overwhelming the spreadsheet or AI services.
+
+This workflow can be adapted to many similar use cases. For example, I could reuse the same structure to rewrite sales emails for a different industry, summarize LinkedIn research into personalized intros, create follow-up emails, clean CRM notes, standardize outreach messaging, or generate account-specific email snippets. To adapt it, I would mainly change the source sheet, the filtering rule, the prompt instructions, and the final fields being written back.
