@@ -1,0 +1,9 @@
+## Purpose / Description
+
+I use this workflow to watch a lead spreadsheet for completed cold-email icebreakers so the outreach process can move forward as soon as a relevant prospect note is ready. The goal is to make the spreadsheet act as the starting point for LinkedIn outreach preparation, ensuring that updates in the “Email Icebreaker” field can trigger the next step in the sales or relationship-building workflow without someone manually checking the sheet.
+
+The core technology used here is n8n connected to Google Sheets. The workflow polls the selected spreadsheet on a frequent schedule and watches for changes in the key column that signals a usable outreach insight has been added. This makes the process lightweight, simple to manage, and easy for a non-technical team to operate from a familiar spreadsheet interface.
+
+This workflow is useful for non-profit agricultural organization outreach because it creates a reliable handoff point between research, cold email preparation, and LinkedIn engagement. Instead of treating email and LinkedIn as disconnected channels, I can use the same personalized insight from the cold email process as the trigger for a follow-up or companion LinkedIn message workflow.
+
+The same setup can be adapted to many similar use cases. For example, I could watch a different spreadsheet column for completed research notes, approved personalization, account status changes, follow-up readiness, or campaign-stage updates. In another context, the spreadsheet could support donor outreach, partnership development, recruiting, grant prospecting, or any workflow where a human or enrichment process updates a sheet and that update should automatically start the next action.
