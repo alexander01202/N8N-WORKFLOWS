@@ -1,0 +1,9 @@
+## Purpose / Description
+
+I use this workflow to automatically turn newly added PDF medical form templates into organized Google Sheets tabs. When a PDF is dropped into a watched local folder, I read the file, extract its text, create a new sheet named after the PDF, and use an AI model to identify the patient-facing questions in the document. I then structure those extracted questions into spreadsheet columns alongside standard metadata fields such as patient, consultation date, provider, and record ID.
+
+The main outcome is that I can quickly convert different PDF questionnaire templates into usable spreadsheet layouts without manually reviewing each form and typing every question as a column header. This is especially useful when handling intake forms, assessments, screenings, or other recurring medical questionnaires that need to be converted into a data-entry or reporting format.
+
+The workflow is built in n8n and relies on a local folder trigger, file reading from disk, PDF text extraction, Google Sheets, a Google Gemini language model, and a structured output parser to keep the AI response clean and predictable. After the questions are extracted, the workflow formats them into a Google Sheets-compatible structure and appends them to the newly created sheet.
+
+I can adapt this same workflow to other document-categorization or template-conversion problems by changing the watched folder, the destination spreadsheet, and the AI extraction instructions. For example, the same pattern could be used to extract fields from legal forms, HR onboarding documents, insurance forms, school applications, compliance checklists, or customer intake questionnaires.
