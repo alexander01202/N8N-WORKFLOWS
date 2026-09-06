@@ -1,0 +1,15 @@
+## Purpose / Description
+
+I use this workflow to automatically turn relevant Upwork email notifications into organized Slack conversations. When a new Gmail message arrives, I check whether it appears to be an Upwork job-related message with unread message content. If it matches, I create or reuse a dedicated private Slack channel for that job, invite the right team member, save the Slack channel reference for future use, and post the extracted message content into that channel.
+
+The main outcome is that I no longer need to manually monitor Gmail, copy Upwork messages, create Slack channels, or search for the right place to discuss a job. Each opportunity or job conversation is routed into its own Slack space, helping me respond faster and keep communication organized.
+
+This workflow relies on a simple automation stack:
+
+- **Gmail Trigger** to watch for new incoming emails.
+- **Filter** to make sure only relevant Upwork job messages continue.
+- **Slack** to create private channels, invite a user, and send messages.
+- **Google Sheets** to remember which Slack channel belongs to which job, so future messages can be routed to the existing channel instead of creating duplicates.
+- **Conditional logic** to decide whether a channel was newly created or already exists.
+
+I can adapt this same pattern to many similar use cases. For example, instead of Upwork, I could route support emails, sales leads, client requests, marketplace notifications, or project updates into Slack. The email filter rules, channel naming logic, and destination Slack users or channels can be adjusted depending on the source and team process. The overall idea remains the same: detect an important email, organize it into the right Slack workspace, and keep a lightweight record so future updates stay connected to the same conversation.
