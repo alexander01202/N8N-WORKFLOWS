@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to turn a Google Sheet of mental health practice leads into title-personalized cold email copy, so each prospect receives messaging that matches their role and likely priorities.
+
+The workflow starts when I manually run it, then pulls lead rows from Google Sheets. It filters the list to only work on the rows that meet the workflow’s criteria, processes leads one at a time, and uses an AI title-classification step to decide which role category each person belongs to. The key decision categories include intake/front desk, SUD/addiction programs, TMS, billing/revenue cycle, EHR/medical records, compliance/QA, program management, clinical leadership, and operations/practice management.
+
+Once the AI categorizes the person’s title, the workflow routes the lead through the correct branch and writes a role-specific email personalization back into the same Google Sheet. Each version of the message is tailored around the problems that role is most likely to care about, such as reducing manual questionnaire processing, improving clinical score accuracy, simplifying audit preparation, speeding up billing documentation, or helping intake teams avoid repetitive PDF data entry.
+
+The main tools and nodes I rely on are Google Sheets for the lead source and destination, an OpenAI chat model with structured output to classify job titles consistently, a Switch node to route each lead by category, batch processing so leads are handled one by one, and a short wait/error-handling path so the workflow can continue safely if an update needs to retry or recover.
+
+This can be adapted to many similar outbound or CRM enrichment problems. For example, I could swap the mental health title categories for software buyers, real estate leads, finance decision-makers, recruiting prospects, or local service businesses. I would keep the same structure: read leads from a sheet or CRM, classify each lead by title or persona, choose the right messaging angle, then write the personalized copy back to the source system for review or sending.
