@@ -1,0 +1,7 @@
+## Purpose / Description
+
+I use this workflow to collect Discord activity in a structured way so I can review or process server messages more easily. The workflow connects to a Discord server, retrieves the available channels, applies a filter to exclude channels that are not relevant to the current use case, and then pulls messages from a selected Discord channel.
+
+The main tech stack used here is **n8n** with the **Discord Bot integration**. The key steps are a Discord channel lookup, a filtering step to narrow down which channels should be considered, and a Discord message retrieval step to bring message data into the workflow.
+
+This is useful when I want to gather Discord conversations for reporting, auditing, community analysis, customer support review, or feeding message history into another automation. In another context, I could adapt it by changing the Discord server, adjusting the channel filtering rule, or pointing the message collection step at a different channel or group of channels. The same pattern can also be reused for other community platforms where I need to first identify relevant spaces and then collect the conversations inside them.
