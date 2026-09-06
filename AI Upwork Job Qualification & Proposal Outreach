@@ -1,0 +1,31 @@
+## Purpose / Description
+
+I use this workflow to automatically qualify new Upwork job posts, generate a tailored proposal, answer any client screening questions, and notify my assistants by email when a job is worth applying to.
+
+The workflow starts when a new Upwork job is received through a webhook. I then filter the opportunity based on client quality and job economics, such as hire rate, budget type, hourly rate, fixed-price value, number of jobs posted, and invites. This helps me avoid wasting time on low-quality or low-probability jobs before any AI processing happens.
+
+Once the job passes the basic filters, I use an AI relevance check to decide whether the post fits the kinds of work I want to take on: web scraping, AI automation, backend Python work, Google Sheets / Apps Script, and no-code automation. The AI returns a structured decision, so the workflow can reliably continue only when the job is actually relevant.
+
+For relevant jobs, I load proposal templates into an in-memory vector store and use an AI agent to choose the best-fitting template for the job. The agent adapts the proposal to the specific job description while preserving my existing writing style and tone. After that, the workflow appends my portfolio links so the final proposal includes supporting proof for lead generation, web scraping, and related automation work.
+
+If the Upwork job includes custom screening questions, I use another AI agent to generate concise, relevant answers that align with the proposal and my portfolio. If there are no questions, the workflow skips that step and continues directly with the proposal.
+
+Finally, the workflow cleans up the proposal formatting, sends the completed proposal and job details to a list of assistants by email, and includes the Upwork job link so someone can quickly review and apply.
+
+### Main tech stack / critical workflow components
+
+- **n8n Webhook** to receive new Upwork job data automatically.
+- **Filter, Switch, and IF nodes** to qualify jobs before spending AI credits or assistant time.
+- **AI relevance classification** to decide whether the job matches my target service categories.
+- **Structured output parsers** to keep AI decisions and proposal outputs predictable.
+- **In-memory vector store with embeddings** to retrieve the most relevant proposal templates.
+- **AI proposal agent** to personalize my proposal while keeping my original tone.
+- **AI question-answering agent** to respond to Upwork screening questions when they exist.
+- **Code and Set nodes** to format the final proposal, attach portfolios, and prepare recipient emails.
+- **Email sending node** to notify the assistant team with the job link, proposal, and key job metrics.
+
+### How this can be adapted
+
+I can adapt this same workflow to almost any marketplace or lead source where new opportunities need to be filtered, scored, personalized, and sent to a human for action. For example, it could be reused for Fiverr briefs, LinkedIn leads, agency inbound forms, job board alerts, sales inquiries, or RFPs.
+
+To adapt it, I would mainly change the incoming webhook fields, update the qualification filters, adjust the relevance categories, replace the proposal templates, and modify the final notification channel. The same core system would still work: receive an opportunity, qualify it, use AI to judge fit, generate a personalized response, answer extra questions if needed, and notify the right person to take action.
