@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to turn a list of company websites into enriched lead records with executive/contact information and Facebook profile details. Starting from a Google Sheet, I check which leads still need to be processed, skip rows without a website, and then work through each company one at a time so the results stay organized and easy to review.
+
+For each website, I scrape the site content and use AI-powered search and extraction to identify the pages most likely to contain staff, team, leadership, ownership, or farm management information. I store the scraped website text and page paths in a vector database so the workflow can search the company’s content semantically instead of relying only on exact keyword matches. This helps me find relevant leadership details even when every website is structured differently.
+
+The main outcome I’m looking for is a clean set of fields: company Facebook URL, farm manager or similar operational leader, owner or executive leader, and any related emails found on the site. I use OpenAI embeddings, OpenAI chat models, Qdrant vector search, retrieval-based question answering, and structured information extraction to pull these details from the scraped content and return them in a consistent format.
+
+After the website research step, I use Apify Facebook tools to verify or discover the company’s Facebook page. If a company Facebook page is found and I already have executive names, I also use Facebook-related Apify scraping to look for possible Facebook profiles connected to the farm manager or owner. The workflow then writes the enriched results into a separate Google Sheet and marks the original lead as processed so the same company is not handled again in future runs.
+
+This workflow can be adapted to many similar enrichment tasks. Instead of farming companies, I could use it for nonprofits, local businesses, schools, clinics, agencies, or any organization list where I need to extract decision makers, role-based contacts, emails, and social media links from websites and social platforms. The core pattern stays the same: read leads from a spreadsheet, scrape public web content, use AI and vector search to find the most relevant information, verify social presence with external data tools, and save structured results back to a sheet.
