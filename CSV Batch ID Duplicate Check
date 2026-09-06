@@ -1,0 +1,7 @@
+## Purpose / Description
+
+I use this workflow to protect an order or batch upload process from accidentally accepting duplicate batch IDs. When a CSV file is submitted through a webhook, I extract the file contents, compare the batch identifiers in the uploaded data against existing records in Airtable, and immediately stop the workflow with a clear error if a duplicate batch is found. If no matching batch ID is detected, the workflow continues past the validation step.
+
+The key tools in this workflow are n8n’s **Webhook** node for receiving the uploaded file, **Extract from File** for reading the CSV content, **Airtable** for checking existing stored records, **Merge** and **Filter** nodes for separating uploaded CSV data from existing reference data, **Loop Over Items** style batching to compare records efficiently, and **Stop and Error** to prevent the process from continuing when a duplicate is detected.
+
+This is useful whenever I need to validate incoming file-based data before allowing it into a business process. In this case, the workflow is focused on batch IDs, but the same pattern can be adapted for customer IDs, invoice numbers, order references, shipment IDs, booking codes, SKU lists, or any other unique field that should not be repeated. To reuse it in another context, I would change the incoming file format, the lookup source, and the field being compared while keeping the same overall validation structure: receive data, extract it, compare it against existing records, and block the workflow if a duplicate is found.
