@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to monitor rising posts in the Upwork subreddit, identify posts I have not already handled, generate a relevant human-sounding reply, post that reply to Reddit, and keep a record of everything in Google Sheets.
+
+The goal is to help me stay active in a niche community without manually checking Reddit every hour, opening each post, drafting a response, and tracking what I already replied to. It is designed for consistent community engagement, not just content collection.
+
+The workflow runs on a schedule, pulls recent rising posts from Reddit, checks them against a Google Sheet so I do not repeat replies on the same post, then processes each new post one by one. For every fresh post, it sends the title and description to an AI model that drafts a reply in a specific voice: direct, casual, experienced, and relevant to freelancers on Upwork. The generated response is then posted back to the Reddit thread after a short wait, and the post details plus the generated reply are saved into Google Sheets for tracking. Once the batch is done, I receive an email letting me know new Reddit replies were prepared and processed.
+
+The key tools used are Reddit for sourcing and publishing comments, Google Sheets for simple tracking and duplicate prevention, Gemini for AI reply generation, structured output parsing to keep the AI response clean and usable, a wait step to avoid instant robotic posting behavior, and email notification for visibility.
+
+This same setup can be adapted to many similar use cases. For example, I could monitor another subreddit, a different niche community, or a support forum; change the AI prompt to match a different brand voice or expert persona; and log the output somewhere else depending on the workflow goal. Instead of replying to Upwork-related posts, the same structure could be used for lead discovery, customer support drafting, community management, reputation monitoring, or content idea collection.
