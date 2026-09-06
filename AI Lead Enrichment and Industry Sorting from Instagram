@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to take a list of Instagram-based leads from Google Sheets, research each business through Google AI search results, and automatically sort qualified leads into the right destination sheet based on whether they are in the dental or home improvement industry.
+
+The workflow starts when I manually run it, then reads lead rows from a Google Sheet and filters the list so I can continue from a specific point instead of reprocessing everything. It loops through each lead one at a time, sends a search request through Apify’s Google Search Scraper using AI Mode, and asks Google-style AI search to identify the business website, whether the company fits dental or home improvement, and whether a TikTok handle can be found.
+
+After the search result comes back, I use OpenAI to turn the unstructured AI search text into clean, structured lead data: website, category, and TikTok handle. The workflow then routes each lead based on the detected category. Home improvement businesses are added or updated in one Google Sheet, while dental businesses are added or updated in another. If the result is missing or cannot be categorized, the workflow skips it and continues processing the next lead.
+
+The main tools used are n8n for orchestration, Google Sheets for lead storage, Apify for Google AI search scraping, OpenAI for extracting structured information, and routing logic to organize the results automatically.
+
+This workflow can be adapted to many similar lead enrichment use cases. For example, I could change the source list, search question, target industries, or output sheets to classify restaurants, real estate agents, med spas, law firms, local contractors, or any other niche. The same structure can also be reused to enrich leads with other details such as LinkedIn pages, email addresses, locations, service categories, or social media profiles.
