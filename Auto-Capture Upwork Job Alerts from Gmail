@@ -1,0 +1,7 @@
+## Purpose / Description
+
+I use this workflow to automatically watch my Gmail inbox for new Upwork job alert emails and immediately send the job link onward to a scraping service for processing. The goal is to reduce manual checking, capture new opportunities as soon as they arrive, and prepare the job details for whatever next step I want, such as analysis, filtering, scoring, or notification.
+
+The workflow runs in n8n and uses a Gmail Trigger as the starting point. It looks for incoming emails from Upwork that match the “New job” subject pattern and are in the relevant Gmail categories and inbox labels. Once a matching email is found, the workflow extracts the job link from the email content, cleans it to keep the main URL, and passes it to an HTTP Request node. That request sends the link to an external scraping service, which can then retrieve and process the job posting details.
+
+This can be adapted to many similar use cases where important links arrive by email and need to be processed automatically. For example, I could adjust the Gmail filters to listen for leads from another marketplace, support tickets, newsletter opportunities, invoice links, competitor alerts, or candidate applications. I could also replace the scraping step with a notification, CRM update, spreadsheet entry, AI evaluation, or approval workflow depending on the desired business outcome.
