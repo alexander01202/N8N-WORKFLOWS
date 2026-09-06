@@ -1,0 +1,9 @@
+## Purpose / Description
+
+I use this workflow to automatically create clear, outcome-focused documentation for the workflows in my n8n instance and save that documentation into a GitHub repository. When I manually run it, I first retrieve the list of available workflows from n8n, separate them into individual items, and filter out archived workflows so I only document active, relevant automations.
+
+For each workflow, I fetch the full workflow details, including its name, nodes, connections, and any sample or pinned data. I then send that information to an OpenAI model, which generates a non-technical Markdown description and suggests a cleaner, more useful workflow name. The generated documentation is converted into a text file, checked against the workflow’s tags, and then either saved to GitHub or skipped from GitHub publishing depending on whether it belongs to a specific internal category. After each item is processed, the workflow loops to the next one until all eligible workflows have been reviewed.
+
+The main tools used here are n8n’s HTTP Request nodes for communicating with the n8n API, Split Out and Loop Over Items for processing many workflows one by one, Filter and IF nodes for excluding unwanted records, the OpenAI node for generating the documentation, Convert to File for preparing the Markdown output, and the GitHub node for storing the final documentation in a repository.
+
+This workflow can be adapted for many similar documentation or auditing use cases. For example, I could use the same pattern to document automations from another platform, generate operational summaries for internal tools, create client-facing process documentation, or build a searchable automation catalog. By changing the data source, the AI prompt, and the destination, I can reuse this structure anywhere I need to turn technical configuration data into readable business documentation.
