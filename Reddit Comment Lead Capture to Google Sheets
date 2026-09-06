@@ -1,0 +1,9 @@
+## Purpose / Description
+
+I use this workflow to automatically find new conversation opportunities on Reddit and organize them into a Google Sheet for outreach follow-up. On a schedule, the workflow checks new posts in a chosen subreddit, reviews the comments on those posts, and captures commenters who have actually written a comment. For each relevant Reddit user, I save their username, Reddit profile link, and prepared outreach/follow-up messaging into a spreadsheet so the outreach process can be managed from one central place.
+
+The main tools involved are **n8n**, **Reddit**, and **Google Sheets**. The workflow starts with a scheduled trigger, pulls new Reddit posts, loops through them one by one, retrieves comments, filters out empty results, and then appends or updates the lead information in Google Sheets. It also includes a waiting/retry step so that if the spreadsheet update temporarily fails, the workflow can pause and try again instead of immediately losing the lead.
+
+The outcome is a simple automated lead-capture system: instead of manually browsing Reddit, copying usernames, building profile links, and preparing outreach notes, I can let the workflow collect and structure that information for me.
+
+This same workflow pattern can be adapted to many similar use cases. For example, I could monitor a different subreddit, track comments around another niche, collect community members discussing a specific problem, or send the results to a CRM instead of Google Sheets. The key idea is reusable: I identify public conversations in an online community, extract relevant people or signals, and store them somewhere actionable for follow-up.
