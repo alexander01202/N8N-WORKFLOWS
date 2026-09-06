@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to automatically publish insight-led Twitter/X content for a Discord-first business audience. The workflow is designed to take a curated list of content topics, choose one at random, research it, turn that research into a polished tweet, and then publish it directly to X without manual writing or posting.
+
+The workflow starts on a schedule, so content can be generated consistently without me needing to trigger it manually. I keep a bank of topics focused on paid Discord communities, including churn, onboarding, member engagement, free-to-paid conversion, sentiment, feedback, and retention. Each run selects one topic, sends it to an AI research agent, and asks for practical insights specific to Discord-based community businesses.
+
+The research step uses an OpenAI chat model with web search capabilities, along with short-term memory, to produce concrete patterns and examples around the selected topic. That research is then passed into a second AI agent that acts as a Twitter ghostwriter. This writing agent uses an Anthropic chat model to create two content assets: a short standalone tweet and a deeper Twitter thread. A structured output parser ensures the final content is returned in a predictable format so the publishing step can use it reliably.
+
+Finally, the workflow posts the standalone tweet through the Twitter/X node using the connected X account. The end result is a repeatable content engine that turns strategic topic ideas into published thought leadership for founders, creators, and operators running paid Discord communities.
+
+This workflow could easily be adapted to other businesses or audiences by changing the topic list, the research instructions, the writing voice, and the target publishing channel. For example, the same structure could support LinkedIn posts for SaaS founders, educational threads for coaches, daily market commentary for investors, or customer education content for agencies. The core pattern remains the same: schedule a run, choose a topic, research it, generate audience-specific content, structure the output, and publish it automatically.
