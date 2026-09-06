@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to monitor new posts in the **r/nonprofit** subreddit, identify posts that have not already been handled, generate a thoughtful AI-assisted reply, post that reply to Reddit, and keep a record of the activity in Google Sheets.
+
+The workflow runs on a schedule during daytime hours, pulls the latest nonprofit subreddit posts through Reddit, checks them against an existing Google Sheets log so I do not repeatedly respond to the same post, and then processes each new post one by one. For each post, I use Google Gemini to draft a short, human-sounding response from the perspective of a nonprofit leader with agricultural-sector experience. A structured output parser helps keep the AI response in the expected format before it is used.
+
+To make the automation feel less robotic, the workflow includes waiting periods and randomized delays between actions. After the AI response is generated, the workflow posts the comment on Reddit, appends the post details and generated reply to Google Sheets, and sends me an email notification when new replies are ready or activity has been processed.
+
+The critical tools in this workflow are **n8n Schedule Trigger**, **Reddit**, **Google Sheets**, **Merge**, **Loop Over Items**, **Google Gemini**, **structured AI output parsing**, **Wait nodes**, and **Email**. Together, they create a lightweight Reddit engagement system that can discover relevant conversations, avoid duplicates, generate context-aware responses, publish them, and maintain a simple audit trail.
+
+I can adapt this workflow to many similar use cases by changing the subreddit, the AI writing instructions, the approval process, or the destination where activity is logged. For example, the same setup could be used for founder communities, SaaS support forums, local business subreddits, education groups, health communities, or any niche where timely, relevant, human-sounding engagement is valuable. It could also be adjusted to draft replies only for manual review instead of posting automatically, making it useful for teams that want more control before public engagement.
