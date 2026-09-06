@@ -1,0 +1,11 @@
+## Purpose / Description
+
+I use this workflow to enrich nonprofit lead records with a clear, usable mission-based sentence that can support more personalized outreach. Instead of manually visiting each nonprofit website, reading through their pages, and rewriting their mission in a concise way, I let the workflow do that work automatically and write the result back into the lead sheet.
+
+The workflow starts by reading nonprofit leads from Google Sheets and only continues with rows that still need mission information. For each lead, I fetch the organization’s website, extract the main page content, clean away unnecessary website elements, and turn the useful text into searchable context. I then use AI retrieval and language model steps to identify the organization’s mission or purpose and rewrite it into a short, natural line such as a sentence that can be used inside an email.
+
+The key parts of the workflow are Google Sheets for the lead source and final update, HTTP Request and HTML extraction for collecting website content, OpenAI embeddings with a Qdrant vector store for organizing and retrieving relevant website information, and AI language/extraction nodes to summarize the mission into a clean structured output. The workflow also uses batching so I can process many leads one at a time without manually managing each row.
+
+The outcome is a spreadsheet where each nonprofit lead gains a concise mission-oriented personalization line. This helps make outreach feel more relevant because the message can refer to what the organization actually exists to do, instead of relying on generic compliments or assumptions.
+
+I can adapt this same workflow to other research and enrichment tasks by changing what I ask the AI to find and summarize. For example, I could use the same structure to extract a company’s value proposition, recent initiatives, target audience, services, leadership message, donation focus, hiring priorities, or community impact. As long as the information can be found on a website or similar public source, the workflow can collect it, organize it, summarize it, and update the lead record automatically.
